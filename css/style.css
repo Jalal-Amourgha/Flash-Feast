@@ -12,13 +12,17 @@
 }
 
 body {
-  height: 5000px;
   font-family: "Rubik", sans-serif;
   position: relative;
 }
 
-.m-100 {
-  margin-top: 100px !important;
+.section-margin {
+  margin: 80px 0px !important;
+}
+
+.section-padding {
+  padding: 80px 0px;
+  background: var(--bg-color);
 }
 
 .height-100 {
@@ -38,24 +42,30 @@ p {
 
 nav {
   position: fixed !important;
-  background: var(--color) !important;
+  background: none;
   top: 0px;
-
-  z-index: 3;
+  z-index: 100;
   width: 100%;
+  color: black;
+  transition: 0.7s;
 }
 
 nav img {
-  width: 150px !important;
+  width: 45px !important;
 }
 
 nav a {
   font-size: 20px !important;
+  text-decoration: none;
+  margin: 0px 7px;
+  color: black;
+}
+nav a:hover {
+  color: var(--color);
 }
 
 nav svg {
   font-size: 1.8rem;
-  color: black;
   cursor: pointer;
 }
 
@@ -74,6 +84,19 @@ nav .close-btn {
 
 nav .offcanvas {
   background: var(--bg-color);
+}
+
+.sticky {
+  background: black;
+  color: white;
+}
+
+.sticky a {
+  color: white;
+}
+
+.active {
+  color: var(--color) !important;
 }
 
 /* E N D - N A V B A R */
@@ -129,10 +152,6 @@ nav .offcanvas {
   grid-template-columns: 32% 32% 32% 4%;
 }
 
-.appointment p {
-  color: var(--color);
-}
-
 .border-right {
   margin: 20px 0px;
   border-right: 1px solid var(--color);
@@ -178,11 +197,6 @@ nav .offcanvas {
 
 /* S T A R T - S E R V I C E */
 
-.service {
-  margin-top: 100px;
-  text-align: center;
-}
-
 .service .img-border {
   border-radius: 52% 48% 30% 70% / 39% 54% 46% 61%;
   height: 100%;
@@ -213,12 +227,6 @@ nav .offcanvas {
 /* E N D - S E R V I C E */
 
 /* S T A R T - M E N U */
-
-.menu {
-  margin-top: 100px;
-  text-align: center;
-  background: var(--bg-color);
-}
 
 .menu-bar {
   max-width: 1000px;
@@ -294,6 +302,7 @@ nav .offcanvas {
   grid-template-columns: 40% 60%;
   background: white;
   border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.342) 0px 3px 8px;
 }
 
 .deal-item .deal-informations {
@@ -323,79 +332,7 @@ nav .offcanvas {
 
 /* E N D - M E N U */
 
-/* S T A R T - A B O U T */
-
-.about-box {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 10px;
-  transition: 0.7s;
-}
-
-.about-box img {
-  width: 64px;
-}
-
-.about-box:hover {
-  background: var(--bg-color);
-  color: var(--color);
-}
-
-/* E N D - A B O U T */
-
-/* S T A R T - R E S E R V A T I O N */
-
-.reservation {
-  background: var(--bg-color);
-  padding: 100px 0px;
-}
-
-.reservation-box {
-  max-width: 800px;
-  margin: auto;
-  background: white;
-  padding: 50px;
-  border-radius: 15px;
-}
-
-.reservation-box h3 {
-  color: var(--color);
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.reservation-box .input-boxes {
-  display: grid;
-  grid-template-columns: repeat(2, calc(calc(100% - 20px) / 2));
-  grid-gap: 20px;
-}
-
-.reservation-box input {
-  width: 100%;
-  border: 1px solid var(--color);
-  border-radius: 5px;
-  outline: none;
-  padding: 10px 0px 10px 50px;
-  position: relative;
-}
-
-.reservation-box .input-boxes svg {
-  position: absolute;
-  top: 11px;
-  left: 10px;
-  font-size: 1.3rem;
-  color: var(--color);
-}
-
-/* E N D - R E S E R V A T I O N */
-
 /* S T A R T - D O W N L O A D */
-
-.download-app {
-  padding: 40px 0px;
-  background: var(--bg-color);
-}
 
 .download-app .phone-img {
   width: 300px;
@@ -430,12 +367,65 @@ nav .offcanvas {
 
 /* E N D - D O W N L O A D */
 
-/*  S T A R T - C O N T A C T */
-
-.contact {
-  background: var(--bg-color);
-  padding: 100px 0px;
+/* S T A R T - R E V I E W */
+.reviews .review-box {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: #0000003f 0px 3px 8px;
+  height: 100%;
 }
+
+.reviews .row .review-theme {
+  height: 100px;
+  width: 100%;
+}
+
+.reviews img {
+  width: 100px;
+  border-radius: 150px;
+  border: 3px solid white;
+  margin-top: -60px;
+  transition: 1s;
+}
+
+.reviews .review-informations {
+  padding: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.reviews .row :nth-child(1) .review-informations:hover img {
+  box-shadow: 0px 0 0 400px #ffb797;
+}
+.reviews .row :nth-child(2) .review-informations:hover img {
+  box-shadow: 0px 0 0 400px #ffcf61;
+}
+.reviews .row :nth-child(3) .review-informations:hover img {
+  box-shadow: 0px 0 0 400px #ee7a7a;
+}
+.reviews .row :nth-child(4) .review-informations:hover img {
+  box-shadow: 0px 0 0 400px #ffd87d;
+}
+.reviews .row :nth-child(5) .review-informations:hover img {
+  box-shadow: 0px 0 0 400px #f77f3f;
+}
+.reviews .row :nth-child(6) .review-informations:hover img {
+  box-shadow: 0px 0 0 400px #86a9d4;
+}
+.reviews .row :nth-child(7) .review-informations:hover img {
+  box-shadow: 0px 0 0 400px #f5a2d5;
+}
+.reviews .row :nth-child(8) .review-informations:hover img {
+  box-shadow: 0px 0 0 400px #b8d87d;
+}
+
+.reviews .review-informations:hover {
+  color: white !important;
+}
+
+/* E N D - R E V I E W */
+
+/*  S T A R T - C O N T A C T */
 
 .contact-box {
   background: white;
@@ -553,7 +543,6 @@ nav .offcanvas {
   font-size: 1.5rem;
   cursor: pointer;
 }
-
 iframe {
   width: 100%;
   height: 100%;
@@ -563,13 +552,9 @@ iframe {
 
 /* S T A R T - F O O T E R */
 
-.footer {
-  padding: 40px 0px;
-  background: var(--bg-color);
-  margin-top: 100px;
-}
 .footer img {
   width: 150px;
+  margin-bottom: 15px;
 }
 
 .footer ul {
@@ -579,8 +564,16 @@ iframe {
 }
 
 .footer li {
-  cursor: pointer;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer a:hover {
+  color: var(--color);
 }
 
 .footer input {
@@ -691,10 +684,13 @@ iframe {
   }
 }
 
-@media (max-width: 990px) {
+@media (max-width: 992px) {
   .menu-items {
     grid-template-columns: repeat(2, calc(calc(100% - 25px) / 2));
     grid-gap: 25px;
+  }
+  nav li {
+    margin: 15px 0px;
   }
 }
 
