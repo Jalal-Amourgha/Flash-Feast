@@ -240,7 +240,7 @@ nav .offcanvas {
 
 .menu-bar .active {
   background: var(--color);
-  color: white;
+  color: white !important;
   border-radius: 15px;
 }
 
